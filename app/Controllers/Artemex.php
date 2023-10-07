@@ -19,4 +19,11 @@ class Artemex extends BaseController
         ];
         return view('Artemex/inicio', $data);
     }
+    public function productos()
+    {
+        $data = [
+            'title' => 'Administrar productos',
+        ];
+        return view('Artemex/productos', $data);
+    }
 }

@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Artemex::index');
 $routes->get('/inicio', 'Artemex::inicio');
+$routes->get('/productos', 'Artemex::productos');
