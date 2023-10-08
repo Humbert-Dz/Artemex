@@ -1,8 +1,8 @@
 <?= view('commons/head')?>
 <div class="w-full">
-    <h2 class="mb-7">En esta sección puedes realizar operaciones como agregar, actualizar o eliminar productos.</h2>
+    <h2 class="mb-7 dark:text-white">En esta sección puedes realizar operaciones como agregar, actualizar o eliminar productos.</h2>
 <a id="defaultModalButton" data-modal-toggle="defaultModal"
-  class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] h-[200px] rounded-xl p-2 active:scale-95 hover:bg-[#1F2733] shadow-2xl shadow-[#C9C9C9] m-auto mb-7 cursor-pointer">
+  class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] h-[200px] rounded-xl p-2 active:scale-95 hover:bg-[#1F2733] shadow-lg shadow-[#3E3E3E] m-auto mb-7 cursor-pointer">
   <figure class="w-full h-full flex flex-col justify-evenly items-center">
     <img src="src/icons/admi_products.svg" alt="" class="w-1/4" />
     <figcaption class="text-2xl text-center font-black text-white">
