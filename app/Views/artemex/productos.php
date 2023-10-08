@@ -1,95 +1,95 @@
 <?= view('commons/head')?>
 <div class="w-full">
     <h2 class="mb-7 dark:text-white">En esta sección puedes realizar operaciones como agregar, actualizar o eliminar productos.</h2>
-<a id="defaultModalButton" data-modal-toggle="defaultModal"
-  class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] h-[200px] rounded-xl p-2 active:scale-95 hover:bg-[#1F2733] shadow-lg shadow-[#3E3E3E] m-auto mb-7 cursor-pointer">
-  <figure class="w-full h-full flex flex-col justify-evenly items-center">
-    <img src="src/icons/admi_products.svg" alt="" class="w-1/4" />
-    <figcaption class="text-2xl text-center font-black text-white">
-      Agregar producto
-    </figcaption>
-  </figure>
-</a>
+    <a id="defaultModalButton" data-modal-toggle="defaultModal"
+    class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] h-[200px] rounded-xl p-2 active:scale-95 hover:bg-[#1F2733] shadow-lg shadow-[#3E3E3E] m-auto mb-7 cursor-pointer">
+        <figure class="w-full h-full flex flex-col justify-evenly items-center">
+            <img src="src/icons/admi_products.svg" alt="" class="w-1/4" />
+            <figcaption class="text-2xl text-center font-black text-white">
+                Agregar producto
+            </figcaption>
+        </figure>
+    </a>
 
-<div class="overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 text-center">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    ID
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Imagen
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Nombre
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Categoría
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Costo
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Precio
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Utilidad
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Descripción
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Stock
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Disponible
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Acciones
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    #
-                </th>
-                <td class="p-1 w-[150px]">
-                    <img src="<?php echo base_url('src/ajolote.svg')?>" alt="" class="w-full">
-                </td>
-                <td class="px-6 py-4">
-                    ###
-                </td>
-                <td class="px-6 py-4">
-                    Vestimenta
-                </td>
-                <td class="px-6 py-4">
-                    $$$
-                </td>
-                <td class="px-6 py-4">
-                    $$$
-                </td>
-                <td class="px-6 py-4">
-                    $$$
-                </td>
-                <td class="px-6 py-4">
-                    ...
-                </td>
-                <td class="px-6 py-4">
-                    #
-                </td>
-                <td class="px-6 py-4">
-                    Sí
-                </td>
+    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 text-center">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        ID
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Imagen
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nombre
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Categoría
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Costo
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Precio
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Utilidad
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Descripción
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Stock
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Disponible
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        #
+                    </th>
+                    <td class="p-1 w-[150px]">
+                        <img src="<?php echo base_url('src/ajolote.svg')?>" alt="" class="w-full">
+                    </td>
+                    <td class="px-6 py-4">
+                        ###
+                    </td>
+                    <td class="px-6 py-4">
+                        Vestimenta
+                    </td>
+                    <td class="px-6 py-4">
+                        $$$
+                    </td>
+                    <td class="px-6 py-4">
+                        $$$
+                    </td>
+                    <td class="px-6 py-4">
+                        $$$
+                    </td>
+                    <td class="px-6 py-4">
+                        ...
+                    </td>
+                    <td class="px-6 py-4">
+                        #
+                    </td>
+                    <td class="px-6 py-4">
+                        Sí
+                    </td>
 
-                <td class="px-6 py-4">
-                    <a href="#" class="active:scale-95 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Editar</a>
-                    <a data-modal-target="popup-modal" data-modal-toggle="popup-modal"  class="active:scale-95 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 cursor-pointer">Eliminar</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <td class="px-6 py-4">
+                        <a href="#" class="active:scale-95 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Editar</a>
+                        <a data-modal-target="popup-modal" data-modal-toggle="popup-modal"  class="active:scale-95 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 cursor-pointer">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
      <!-- Main modal -->
      <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
@@ -168,24 +168,24 @@
       </div>
     </div>
 
-<div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative w-full max-w-md max-h-full">
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-               
-            <div class="p-6 text-center">
-                <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                </svg>
-                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estas seguro de que quieres eliminar el producto?</h3>
-                <button data-modal-hide="popup-modal" type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                    Sí, estoy seguro
-                </button>
-                <button data-modal-hide="popup-modal" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                    No, cancelar</button>
+    <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                
+                <div class="p-6 text-center">
+                    <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estas seguro de que quieres eliminar el producto?</h3>
+                    <button data-modal-hide="popup-modal" type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                        Sí, estoy seguro
+                    </button>
+                    <button data-modal-hide="popup-modal" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                        No, cancelar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>

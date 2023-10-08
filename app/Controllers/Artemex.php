@@ -26,4 +26,11 @@ class Artemex extends BaseController
         ];
         return view('Artemex/productos', $data);
     }
+    public function informes()
+    {
+        $data = [
+            'title' => 'Generar informe',
+        ];
+        return view('Artemex/informe', $data);
+    }
 }
