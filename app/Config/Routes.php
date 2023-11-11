@@ -9,3 +9,4 @@ $routes->get('/', 'Artemex::index');
 $routes->get('/inicio', 'Artemex::inicio');
 $routes->get('/producto', 'Producto::index');
 $routes->get('/informe', 'Informe::index');
+$routes->get('/pedido', 'Pedido::index');
