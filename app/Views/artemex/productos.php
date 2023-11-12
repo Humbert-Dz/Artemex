@@ -1,11 +1,34 @@
 <?= view('commons/head')?>
 <div class="w-full">
     <h2 class="mb-7 dark:text-white">En esta sección puedes realizar operaciones como agregar, actualizar o eliminar productos.</h2>
+    <div class="w-full h-[32px] flex gap-x-3 mb-7">
+            <form action="<?php ?>" method="post" class="basis-1/2 h-full">   
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input type="search" id="search" name="search" class="block w-full p-[5px] pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Busca pedido..." required>
+                    <button type="submit" class="text-white absolute right-0 bottom-0 top-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
+                </div>
+            </form>
+            <form action="<?php ?>" method="post" class="basis-1/2 h-full">
+                <div class="flex gap-2 h-full">
+                    <select id="filtro" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-[5px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <option value="todos">Todos</option>
+                    </select>
+                    <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Filtrar
+                    </button>
+                </div>
+            </form>
+    </div>
     <a id="defaultModalButton" data-modal-toggle="defaultModal"
-    class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] h-[200px] rounded-xl p-2 active:scale-95 hover:bg-[#1F2733] shadow-lg shadow-[#3E3E3E] m-auto mb-7 cursor-pointer">
-        <figure class="w-full h-full flex flex-col justify-evenly items-center">
-            <img src="src/icons/admi_products.svg" alt="" class="w-1/4" />
-            <figcaption class="text-2xl text-center font-black text-white">
+            class="block bg-[#090E1D] bg-addProduct bg-cover w-[300px] rounded-xl py-2.5 px-1 active:scale-95 hover:bg-[#1F2733] shadow-lg shadow-[#3E3E3E] m-auto mb-7 cursor-pointer">
+        <figure class="w-full flex justify-evenly items-center">
+            <img src="src/icons/admi_products.svg" alt="" class="w-8" />
+            <figcaption class="text-xl text-center font-black text-white">
                 Agregar producto
             </figcaption>
         </figure>
@@ -91,7 +114,7 @@
             </tbody>
         </table>
 
-     <!-- Main modal -->
+     <!-- Modal agregar producto -->
      <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
       <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
           <!-- Modal content -->
@@ -104,7 +127,7 @@
                   </button>
               </div>
               <!-- Modal body -->
-              <form action="#" method="post">
+              <form action="<?= base_url('producto/agregar') ?>" method="post" enctype="multipart/form-data">
                   <div class="grid gap-6 mb-4 sm:grid-cols-2">
                       <div>
                           <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
@@ -145,8 +168,8 @@
                           </div>
                       </div>
                       <div class="sm:col-span-2">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="foto">Fotografía del producto</label>
-                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="foto" type="file">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="imagen">Fotografía del producto</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="imagen" id="imagen" type="file">
                       </div>
                       <div class="sm:col-span-2">
                           <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
