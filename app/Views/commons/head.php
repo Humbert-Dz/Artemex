@@ -70,7 +70,7 @@
             </a>
           </div>
           <h1 class="text-white text-2xl font-black text-center mx-auto"><?php echo $title?></h1>
-          <a href="#" class="flex items-center p-2 text-white rounded-lg bg-slate-500 hover:bg-slate-600 active:scale-95 active:scale-95">
+          <a href="<?= base_url('/logout') ?>" class="flex items-center p-2 text-white rounded-lg bg-slate-500 hover:bg-slate-600 active:scale-95 active:scale-95">
             <img class="flex-shrink-0 w-5 h-5 transition duration-75 text-white" src="src/icons/cerrar_sesion.svg"/>
             <span class="flex-1 ml-3 whitespace-nowrap text-sm">Cerrar sesión</span>
           </a>

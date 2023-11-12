@@ -37,8 +37,9 @@
     <title>ARTEMEX - inicio de sesión</title>
   </head>
   <body class="h-screen bg-[#131921] flex items-center justify-center">
+    <?php $session = session() ?>
     <form
-      action="#"
+      action="<?= base_url('/login') ?>"
       method="post"
       class="block w-1/3 max-w-xl h-3/4 rounded-xl p-4 bg-login bg-cover flex items-center justify-center"
     >
@@ -59,6 +60,7 @@
           <input
             type="email"
             id="email"
+            name="email"
             class="bg-white border font-raleway border-gray-300 text-sm text-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-[#d8e2dc] focus:bg-[#f4f4f6] block w-full p-2.5"
             placeholder="Ingresa tu correo electrónico aquí"
             required
@@ -73,6 +75,7 @@
           <input
             type="password"
             id="password"
+            name="password"
             class="bg-white border font-raleway border-gray-300 text-sm text-gray-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-[#d8e2dc] focus:bg-[#f4f4f6] block w-full p-2.5"
             placeholder="Ingresa tu contraseña aquí"
             minlength="8"
