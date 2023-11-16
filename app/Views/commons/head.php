@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="src/ajolote.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="<?= base_url('src/ajolote.svg') ?>" type="image/svg+xml" />
     <!-- !CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
@@ -33,6 +33,9 @@
             },
             gridTemplateColumns: {
               'fit': 'repeat(auto-fit, minmax(300px, 1fr))',
+            },
+            boxShadow: {
+              'chica': '0px 0px 15px rgb(202,240,248)',
             }
           },
         },
@@ -64,14 +67,14 @@
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
               </svg>
             </button>
-            <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
-              <img src="src/ajolote.svg" class="h-8 mr-3" alt="FlowBite Logo" />
+            <a href="<?= base_url('inicio') ?>" class="flex ml-2 md:mr-24">
+              <img src="<?= base_url('src/ajolote.svg')?>" class="h-8 mr-3" alt="Logo" />
               <span class="self-center text-xl font-normal sm:text-2xl whitespace-nowrap dark:text-white font-titan">ARTEMEX</span>
             </a>
           </div>
           <h1 class="text-white text-2xl font-black text-center mx-auto"><?php echo $title?></h1>
           <a href="<?= base_url('/logout') ?>" class="flex items-center p-2 text-white rounded-lg bg-slate-500 hover:bg-slate-600 active:scale-95 active:scale-95">
-            <img class="flex-shrink-0 w-5 h-5 transition duration-75 text-white" src="src/icons/cerrar_sesion.svg"/>
+            <img class="flex-shrink-0 w-5 h-5 transition duration-75 text-white" src="<?= base_url('src/icons/cerrar_sesion.svg')?>"/>
             <span class="flex-1 ml-3 whitespace-nowrap text-sm">Cerrar sesión</span>
           </a>
         </div>
@@ -86,36 +89,39 @@
           <li>
             <a
               href="<?= base_url('inicio')?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
-              <img src="src/icons/inicio.svg" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <img src="<?= base_url('src/icons/inicio.svg')?>" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="flex-1 ml-3 whitespace-nowrap">Inicio</span>
             </a>
           </li>
           <li>
             <a
               href="<?= base_url('producto')?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
-              <img src="src/icons/admi_products.svg" alt="" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <img src="<?= base_url('src/icons/admi_products.svg')?>" alt="" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="ml-3">Administrar productos</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('informe')?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
-              <img src="src/icons/inform.svg" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <img src="<?= base_url('src/icons/inform.svg')?>" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="flex-1 ml-3 whitespace-nowrap">Generar informe</span>
             </a>
           </li>
           <li>
             <a href="<?= base_url('pedido')?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
-              <img src="src/icons/packages.svg" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <img src="<?= base_url('src/icons/packages.svg')?>" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="flex-1 ml-3 whitespace-nowrap">Pedidos</span>
             </a>
           </li>
           <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
-              <img src="src/icons/user.svg" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <img src="<?= base_url('src/icons/user.svg')?>" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="flex-1 ml-3 whitespace-nowrap">Mi cuenta</span>
             </a>
-          </li>
+          </li>  
         </ul>
+        <h4 href="#" class="absolute bottom-0 left-0 right-0 flex items-center p-2 text-gray-900 text-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <span class="flex-1 ml-3 whitespace-nowrap">Bienvenid@ <?php echo session()->get('name') . '!'?></span>
+    </h4>
       </div>
     </aside>
 

@@ -20,7 +20,12 @@ class Artemex extends BaseController
 
             if (count($query) > 0) {
                 $session = session();
+                $idAdmin = $query[0]->id;
+                $name = $query[0]->name;
+
                 $newdata = [
+                    'idAdmin' => $idAdmin,
+                    'name' => $name,
                     'email' => $this->request->getPost('email'),
                     'password' => $this->request->getPost('password'),
                     'logged_in' => true,
@@ -48,10 +53,17 @@ class Artemex extends BaseController
 
     public function inicio()
     {
-        $data = [
-            'title' => 'Inicio',
-        ];
+        $session = session();
 
-        return view('Artemex/inicio', $data);
+        if ($session->get('logged_in')) {
+            $data = [
+                'title' => 'Inicio',
+                'name' => $session->get('name'),
+            ];
+
+            return view('Artemex/inicio', $data);
+        } else {
+            return redirect()->to("/login");
+        }
     }
 }
