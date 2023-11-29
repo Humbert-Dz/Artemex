@@ -22,6 +22,9 @@ $routes->get('producto/editar/(:num)', 'Producto::editar/$1');
 $routes->post('producto/actualizar/(:num)', 'Producto::actualizar/$1');
 $routes->get('producto/eliminar/(:num)', 'Producto::eliminar/$1');
 
-
+/* Informes */
 $routes->get('/informe', 'Informe::index');
+$routes->post('/informe', 'Informe::index');
+
+
 $routes->get('/pedido', 'Pedido::index');
