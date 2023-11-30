@@ -26,5 +26,10 @@ $routes->get('producto/eliminar/(:num)', 'Producto::eliminar/$1');
 $routes->get('/informe', 'Informe::index');
 $routes->post('/informe', 'Informe::index');
 
-
+// Pedido
 $routes->get('/pedido', 'Pedido::index');
+$routes->get('/pedido/confirmar/(:num)', 'Pedido::confirmar/$1');
+$routes->get('/pedido/cancelar/(:num)', 'Pedido::cancelar/$1');
+$routes->get('/pedido/enviar/(:num)', 'Pedido::enviar/$1');
+$routes->post('/pedido/buscar)', 'Pedido::buscar');
+
