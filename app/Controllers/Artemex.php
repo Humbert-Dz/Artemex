@@ -8,6 +8,12 @@ class Artemex extends BaseController
 {
 
     // Login
+    /**
+     * maneja la autenticación de administradores. 
+     * Verifica si se envió un formulario de inicio de sesión, realiza la autenticación en la base de 
+     * datos usando una consulta almacenada y si son válidas, inicia una sesión y
+     * redirige al usuario a una página de inicio.
+     */
     public function login()
     {
         if ($this->request->getMethod() === 'post') {
@@ -44,6 +50,7 @@ class Artemex extends BaseController
         }
     }
 
+    // Cierra la sesión, destruye las variables de sesión
     public function logout()
     {
         $session = session();
@@ -51,6 +58,7 @@ class Artemex extends BaseController
         return redirect()->to("/login");
     }
 
+    // Si el usuario está autenticado, se carga la vista de inicio
     public function inicio()
     {
         $session = session();

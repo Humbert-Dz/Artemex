@@ -7,6 +7,11 @@ use App\Models\PedidoModel;
 
 class Pedido extends BaseController
 {
+    /**
+     * La función index en CodeIgniter muestra la lista de pedidos si el usuario está autenticado,
+     *  obteniendo los detalles de la base de datos y cargando la vista 'pedidos/pedido'. 
+     * Si no está autenticado, redirige a la página de inicio de sesión.
+     */
     public function index()
     {
 
@@ -28,6 +33,11 @@ class Pedido extends BaseController
         }
     }
 
+    /**
+     * La función confirmar en CodeIgniter confirma un pedido cambiando su estado a confirmado. 
+     * Si el usuario está autenticado, actualiza el estado del pedido y redirige a la página de pedidos. 
+     * Si no está autenticado, redirige a la página de inicio de sesión.
+     */
     public function confirmar($id)
     {
 
@@ -48,6 +58,11 @@ class Pedido extends BaseController
         }
     }
 
+    /**
+     * La función cancelar en CodeIgniter cancela un pedido específico registrando la marca de tiempo de cancelación. 
+     * Si el usuario está autenticado, actualiza el pedido con la nueva información y redirige a la página de pedidos. 
+     * Si no está autenticado, redirige a la página de inicio de sesión.
+     */
     public function cancelar($id)
     {
         $session = session();
@@ -67,6 +82,11 @@ class Pedido extends BaseController
         }
     }
 
+    /**
+     * La función enviar en CodeIgniter marca como enviado un pedido específico mediante la actualización del campo 'delivery'. 
+     * Si el usuario está autenticado, actualiza el pedido con la nueva información y redirige a la página de pedidos. 
+     * Si no está autenticado, redirige a la página de inicio de sesión.
+     */
     public function enviar($id)
     {
         $session = session();
@@ -86,5 +106,5 @@ class Pedido extends BaseController
         }
     }
 
-    
+
 }

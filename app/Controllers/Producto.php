@@ -8,6 +8,13 @@ use App\Models\ProductoModel;
 
 class Producto extends BaseController
 {
+    // todos los métodos validan si el usuario ha iniciado sesión
+
+    /**
+     * obtiene las categorías y productos de la base de datos, 
+     * prepara los datos y carga la vista 'producto/productos'. Si no está autenticado,
+     * redirige a la página de inicio de sesión.
+     */
     public function index()
     {
         $session = session();
@@ -28,6 +35,10 @@ class Producto extends BaseController
         }
     }
 
+    /**
+     * Agrega un nuevo producto, recepciona los datos del formulario y crea un nuevo registro 
+     * en la base de datos
+     */
     public function agregar()
     {
 
@@ -77,6 +88,9 @@ class Producto extends BaseController
         }
     }
 
+    /**
+     * Busca un producto determinado usando un procedimiento almacenado de la base de datos
+     */
     public function buscar()
     {
         $session = session();
@@ -99,6 +113,12 @@ class Producto extends BaseController
         }
 
     }
+
+    /**
+     * obtiene el filtro de la solicitud POST. Dependiendo del filtro, 
+     * realiza consultas a la base de datos utilizando procedimientos 
+     * almacenados específicos. 
+     */
     public function filtrado()
     {
         $session = session();
@@ -126,6 +146,12 @@ class Producto extends BaseController
             redirect()->to('/login');
         }
     }
+
+    /**
+     * realiza consultas para obtener todos los productos y un producto específico según el ID proporcionado. 
+     * Luego, prepara los datos y carga la vista 'producto/editar' para permitir la edición del producto seleccionado. 
+     * Si el usuario no está autenticado, redirige a la página de inicio de sesión.
+     */
     public function editar($id)
     {
         $session = session();
@@ -148,6 +174,9 @@ class Producto extends BaseController
         }
     }
 
+    /**
+     *  actualiza la información de un producto identificado por su ID
+     */
     public function actualizar($id)
     {
         $session = session();
@@ -192,6 +221,8 @@ class Producto extends BaseController
             return redirect()->to('/login');
         }
     }
+
+    // Elimina un  producto por su id
     public function eliminar($id)
     {
         $session = session();
