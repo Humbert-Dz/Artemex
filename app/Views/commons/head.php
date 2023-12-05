@@ -112,6 +112,12 @@
               <span class="flex-1 ml-3 whitespace-nowrap">Pedidos</span>
             </a>
           </li> 
+          <li>
+            <a href="<?= base_url('cuentas')?>" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
+              <img src="<?= base_url('src/icons/user.svg')?>" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <span class="flex-1 ml-3 whitespace-nowrap">Cuentas</span>
+            </a>
+          </li> 
         </ul>
         <h4 href="#" class="absolute bottom-0 left-0 right-0 flex items-center p-2 text-gray-900 text-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <span class="flex-1 ml-3 whitespace-nowrap">Bienvenid@ <?php echo session()->get('name') . '!'?></span>

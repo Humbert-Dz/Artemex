@@ -34,3 +34,7 @@ $routes->get('/pedido/enviar/(:num)', 'Pedido::enviar/$1');
 $routes->post('/pedido/buscar', 'Pedido::buscar');
 $routes->post('/pedido/filtrado', 'Pedido::filtrado');
 
+// Cuentas
+$routes->get('/cuentas', 'CuentasController::index');
+$routes->get('/cuentas/administradores', 'CuentasController::administradores');
+$routes->get('/cuentas/clientes', 'CuentasController::clientes');
