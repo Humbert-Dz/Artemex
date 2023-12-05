@@ -3,6 +3,44 @@
         <div class="w-full mb-7">
             <div>
                 <h2 class="mb-7 dark:text-white">En esta sección puedes ver los pedidos de tus clientes.</h2>
+                <div class="w-full h-[32px] flex gap-x-3 mb-7">
+                    <form action="<?= base_url('pedido/buscar') ?>" method="post" class="basis-1/2 h-full">   
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                </svg>
+                            </div>
+                            <input type="number" min="0" id="idPedido" name="idPedido" class="block w-full p-[5px] pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Busca un pedido..." required>
+                            <button type="submit" class="text-white absolute right-0 bottom-0 top-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
+                        </div>
+                    </form>
+                    <form action="<?= base_url('pedido/filtrado') ?>" method="post" class="basis-1/2 h-full">
+                        <div class="flex gap-2 h-full">
+                            <select id="filtro" name="filtro" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-[5px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                                <option value="0">Pedidos enviados</option>
+                                <option value="1">Pedidos por enviar</option>
+                                <option value="2">Pedidos cancelados </option>
+                                <option value="3">Pedidos por confirmar </option>
+                            </select>
+                            <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Filtrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <?php 
+        $currentUrl = $_SERVER['REQUEST_URI'];
+
+        // Obtener la porción después de "/producto"
+        $parts = explode('/pedido/', $currentUrl);
+
+        // Verificar si el array tiene al menos dos elementos y el segundo elemento es 'buscar'
+        if (count($parts) >= 2 && $parts[1] == ('buscar' || 'filtrado' ) ):?>
+            <div class="w-full flex justify-center">
+                <a href="<?= base_url('/pedido') ?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">Reestablecer búsqueda</a>
+            </div>
+        <?php endif;?>
             </div>
         </div>
 
@@ -128,6 +166,7 @@
               </div>
               <!-- Modal body -->
               <form action="#" method="post">
+                <input id="IDorder" name="IDorder" type="hidden" value="">
                   <div class="grid gap-6 mb-4 sm:grid-cols-2">
                         <div>
                             <label for="paqueteria" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paquetería</label>
@@ -143,9 +182,9 @@
                         <button type="button" class="text-black text-base active:scale-95 text-white flex items-center bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" data-modal-toggle="enviar_pedido">
                             Cancelar
                         </button>
-                        <a href="<?= base_url('/pedido/enviar/') ?>" id="enviar" class="text-black text-base active:scale-95 text-white flex items-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
+                        <button type="submit" class="text-black text-base active:scale-95 text-white flex items-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
                             Aceptar
-                        </a>
+                        </button>
                     </div>
               </form>
           </div>
@@ -163,7 +202,7 @@
         
         function enviar(id){
             // Obtén la etiqueta <a> por su ID
-            var link = document.getElementById("enviar");
+            var link = document.getElementById("IDorder");
     
             // Concatena el número `id` al atributo `href`
             link.href = link.href + id;

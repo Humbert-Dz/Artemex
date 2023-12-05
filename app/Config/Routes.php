@@ -31,5 +31,6 @@ $routes->get('/pedido', 'Pedido::index');
 $routes->get('/pedido/confirmar/(:num)', 'Pedido::confirmar/$1');
 $routes->get('/pedido/cancelar/(:num)', 'Pedido::cancelar/$1');
 $routes->get('/pedido/enviar/(:num)', 'Pedido::enviar/$1');
-$routes->post('/pedido/buscar)', 'Pedido::buscar');
+$routes->post('/pedido/buscar', 'Pedido::buscar');
+$routes->post('/pedido/filtrado', 'Pedido::filtrado');
 

@@ -106,5 +106,55 @@ class Pedido extends BaseController
         }
     }
 
+    /**
+     * obtiene el filtro de la solicitud POST. Dependiendo del filtro, 
+     * realiza consultas a la base de datos utilizando procedimientos 
+     * almacenados específicos. 
+     */
+    public function filtrado()
+    {
+        $session = session();
+
+
+        if ($session->get('logged_in')) {
+            $db = \Config\Database::connect();
+
+            $filtro = $this->request->getPost('filtro');
+
+            $pedidos = $db->query('CALL art_filterOrders(?)', array($filtro))->getResultArray();
+
+            $data = [
+                'title' => 'Pedidos',
+                'pedidos' => $pedidos,
+            ];
+
+            return view('pedidos/pedido', $data);
+        } else {
+            redirect()->to('/login');
+        }
+    }
+
+    // Busca un pedido de acuerdo a su id
+    public function buscar()
+    {
+        $session = session();
+        if ($session->get('logged_in')) {
+
+            $db = \Config\Database::connect();
+            $idPedido = $this->request->getPost('idPedido');
+
+            $pedidos = $db->query('select * from detalles_orders where id = ? ;', array($idPedido))->getResultArray();
+
+            $data = [
+                'title' => 'Administrar productos',
+
+                'pedidos' => $pedidos,
+            ];
+
+            return view('pedidos/pedido', $data);
+        } else {
+            redirect()->to('/login');
+        }
+    }
 
 }
